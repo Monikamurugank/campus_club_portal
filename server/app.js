@@ -11,8 +11,12 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
 
-// Allow requests from the React dev server
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173', credentials: true }));
+// Allow requests from local dev and Vercel production
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.CLIENT_URL,
+].filter(Boolean);
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 
 // Mount all API routes
