@@ -11,21 +11,8 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
 
-// Allow requests from local dev and Vercel production
-app.use(cors({
-  origin: (origin, callback) => {
-    const allowed = [
-      'http://localhost:5173',
-      'https://campus-club-portal-ruddy.vercel.app',
-    ];
-    if (!origin || allowed.includes(origin.trim())) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-}));
+// Allow all origins (safe for development/demo)
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Mount all API routes
