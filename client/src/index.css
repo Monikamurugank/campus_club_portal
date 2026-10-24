@@ -1,0 +1,46 @@
+/* Global styles for Campus Club Management Portal */
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #2c2c2c;
+  background-color: #f8f5f0;
+}
+
+/* Smooth card hover */
+.card {
+  transition: box-shadow 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Table header consistent styling */
+thead th {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Form controls focus ring in brand color */
+.form-control:focus,
+.form-select:focus {
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 79, 0.2);
+}
+
+/* Button overrides */
+.btn-success {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+}
+.btn-success:hover {
+  background-color: #1a3c2e;
+  border-color: #1a3c2e;
+}
+.btn-outline-success {
+  color: #2d6a4f;
+  border-color: #2d6a4f;
+}
+.btn-outline-success:hover {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+}
