@@ -29,14 +29,13 @@ const Landing = () => (
         <h2 className="text-center fw-bold mb-5" style={{ color: '#1a3c2e' }}>Why Join?</h2>
         <div className="row g-4">
           {[
-            { icon: '🏛️', title: 'Discover Clubs', desc: 'Browse all campus clubs by category and find your community.' },
-            { icon: '📅', title: 'Attend Events', desc: 'Register for workshops, fests, seminars, and more.' },
-            { icon: '🤝', title: 'Connect', desc: 'Meet like-minded students and grow your network.' },
-            { icon: '📊', title: 'Track Activity', desc: 'Manage your memberships and event registrations in one place.' },
+            { title: 'Discover Clubs', desc: 'Browse all campus clubs by category and find your community.' },
+            { title: 'Attend Events', desc: 'Register for workshops, fests, seminars, and more.' },
+            { title: 'Connect', desc: 'Meet like-minded students and grow your network.' },
+            { title: 'Track Activity', desc: 'Manage your memberships and event registrations in one place.' },
           ].map((f) => (
             <div key={f.title} className="col-md-6 col-lg-3">
               <div className="card h-100 border-0 shadow-sm text-center p-4">
-                <div style={{ fontSize: '2.5rem' }}>{f.icon}</div>
                 <h5 className="fw-bold mt-3" style={{ color: '#1a3c2e' }}>{f.title}</h5>
                 <p className="text-muted small">{f.desc}</p>
               </div>

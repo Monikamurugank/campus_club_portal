@@ -17,10 +17,10 @@ const AdminDashboard = () => {
   if (loading) return <Spinner />;
 
   const cards = [
-    { label: 'Total Clubs', value: stats?.totalClubs ?? 0, icon: '🏛️', link: '/admin/clubs', color: '#1a3c2e' },
-    { label: 'Registered Students', value: stats?.totalUsers ?? 0, icon: '👥', link: '/admin/users', color: '#2d6a4f' },
-    { label: 'Total Events', value: stats?.totalEvents ?? 0, icon: '📅', link: '/admin/events', color: '#40916c' },
-    { label: 'Event Registrations', value: stats?.totalRegistrations ?? 0, icon: '🎟️', link: '/admin/registrations', color: '#52b788' },
+    { label: 'Total Clubs', value: stats?.totalClubs ?? 0, link: '/admin/clubs', color: '#1a3c2e' },
+    { label: 'Registered Students', value: stats?.totalUsers ?? 0, link: '/admin/users', color: '#2d6a4f' },
+    { label: 'Total Events', value: stats?.totalEvents ?? 0, link: '/admin/events', color: '#40916c' },
+    { label: 'Event Registrations', value: stats?.totalRegistrations ?? 0, link: '/admin/registrations', color: '#52b788' },
   ];
 
   return (
@@ -36,7 +36,6 @@ const AdminDashboard = () => {
                 style={{ background: c.color, transition: 'transform 0.2s' }}
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                <div style={{ fontSize: '2rem' }}>{c.icon}</div>
                 <h2 className="fw-bold mt-2">{c.value}</h2>
                 <p className="mb-0 opacity-75">{c.label}</p>
               </div>

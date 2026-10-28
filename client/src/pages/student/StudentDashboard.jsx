@@ -20,22 +20,20 @@ const StudentDashboard = () => {
 
   return (
     <div className="container py-5">
-      <h2 className="fw-bold mb-1" style={{ color: '#1a3c2e' }}>Welcome, {user.name}! 👋</h2>
+      <h2 className="fw-bold mb-1" style={{ color: '#1a3c2e' }}>Welcome, {user.name}!</h2>
       <p className="text-muted mb-4">Here's your campus activity overview.</p>
 
-      {/* Stats Cards */}
       <div className="row g-4 mb-5">
         {[
-          { label: 'Clubs Joined', value: stats.memberships, icon: '🏛️', link: '/my-memberships' },
-          { label: 'Events Registered', value: stats.registrations, icon: '🎟️', link: '/my-registrations' },
-          { label: 'Upcoming Events', value: stats.upcomingEvents, icon: '📅', link: '/events' },
+          { label: 'Clubs Joined', value: stats.memberships, link: '/my-memberships' },
+          { label: 'Events Registered', value: stats.registrations, link: '/my-registrations' },
+          { label: 'Upcoming Events', value: stats.upcomingEvents, link: '/events' },
         ].map((s) => (
           <div key={s.label} className="col-md-4">
             <Link to={s.link} className="text-decoration-none">
               <div className="card border-0 shadow-sm text-center p-4 h-100" style={{ transition: 'transform 0.2s' }}
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                <div style={{ fontSize: '2rem' }}>{s.icon}</div>
                 <h2 className="fw-bold mt-2" style={{ color: '#1a3c2e' }}>{s.value}</h2>
                 <p className="text-muted mb-0">{s.label}</p>
               </div>
@@ -44,7 +42,6 @@ const StudentDashboard = () => {
         ))}
       </div>
 
-      {/* Quick Actions */}
       <h5 className="fw-bold mb-3" style={{ color: '#1a3c2e' }}>Quick Actions</h5>
       <div className="d-flex flex-wrap gap-3">
         <Link to="/clubs" className="btn btn-success">Browse Clubs</Link>
